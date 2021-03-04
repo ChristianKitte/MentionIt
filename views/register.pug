@@ -1,0 +1,30 @@
+div(class='mx-auto' style='width: 400px')
+
+    form(class='needs-validation was-validated' novalidate id='registerForm' method='post' action='/register')
+        div(class='form-group ml-4')
+            label(for='email') eMail
+            input(class='form-control' id='email' type="email" name="email" placeholder="eMail" maxlength=20 required='true' autofocus='true')
+            div(class='valid-feedback') OK
+            div(class='invalid-feedback') Geben Sie eine eMail-Adresse an
+
+        div(class='form-group ml-4')
+            label(for='username') Benutzername
+            input(class='form-control' id='username' type="text" name="username" placeholder="Benutzername" maxlength=20 required='true')
+            div(class='valid-feedback') OK
+            div(class='invalid-feedback') Wählen Sie einen Benutzername
+
+        div(class='form-group ml-4')
+            label(for='password') Passwort
+            input(class='form-control' id='password' type="password" name="password" placeholder="Password" maxlength=20 required='true')
+            div(class='valid-feedback') OK
+            div(class='invalid-feedback') Wählen Sie ein Passwort
+
+        div(class='form-group ml-4')
+            label(for='passwordConf') Passwort wiederholen
+            input(class='form-control' id='passwordConf' type="password" name="passwordconf" placeholder="Password wiederholen" maxlength=20 required='true' onchange='validatePWDConf()')
+            div(class='valid-feedback') OK
+            div(class='invalid-feedback') Hinweis - Die Eingabe ist nicht identisch !
+
+
+        button(type='submit' class='btn btn-primary ml-4 mt-4') Registrieren
+

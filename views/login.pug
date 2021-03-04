@@ -1,0 +1,17 @@
+div(class='mx-auto' style='width: 400px')
+
+    form(class='needs-validation was-validated' novalidate id='loginForm' method='post' action='/login')
+        div(class='form-group ml-4')
+            label(for='username') Benutzername
+            input(class='form-control' id='username' type="text" name="username" placeholder="Benutzername" maxlength=20 required='true' autofocus='true')
+            div(class='valid-feedback') OK
+            div(class='invalid-feedback') Geben Sie einen Anmeldename ein
+
+        div(class='form-group ml-4')
+            label(for='password') Passwort
+            input(class='form-control' id='password' type="password" name="password" placeholder="Password" maxlength=20 required='true')
+            div(class='valid-feedback') OK
+            div(class='invalid-feedback') Geben Sie ein gültiges Passwort ein
+
+        button(type='submit' class='btn btn-primary ml-4 mt-4') Login
+        button(type='button' class='btn btn-secondary ml-4 mt-4' onclick='openRegister()') Registrieren

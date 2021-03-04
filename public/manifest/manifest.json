@@ -1,0 +1,15 @@
+{
+  "name": "MentionIT",
+  "short_name": "MenIT",
+  "icons": [
+    {
+      "src": "favicon.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    }
+  ],
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#3367D6",
+  "theme_color": "#3367D6"
+}

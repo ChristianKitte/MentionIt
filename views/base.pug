@@ -1,0 +1,111 @@
+doctype html
+html(lang='de' manifest='/offline.manifest')
+    head
+        <!-- Required meta tags -->
+        meta(charset='utf-8')
+        meta(name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no')
+
+        <!-- Bootstrap CSS, Icon, Manifest JSON -->
+        link(rel='stylesheet' href='/bootstrap.min.css')
+        link(rel='shortcut icon' href='/favicon.png')
+        link(rel='manifest' href='/manifest.json')
+
+        <!-- ClientSide JavaScript for MentionIT-->
+        title MentionIT
+
+    body(onload='openHome()')
+
+    template(id='cardTemplate')
+        div(class='card bg-light mb-4')
+            article(id="ID" class='mentionArticle')
+                div(class='card-header')
+                    h5(id='caption__ID' class='card-title') CAPTION
+
+                div(class='card-body')
+                    h6(class='card-subtitle' mb-2 text-muted) Besitzer : noch nicht gesetzt
+                    p(id='body__ID' class='card-text') TEXT
+
+                    ul
+                        li(id='imageCount__ID')= 'Bilder : 0'
+                        li(id='voiceCount__ID')= 'Sprachnachrichten : 0'
+
+                    nav(class='listMenu')
+                        a(id='deleteMentionLink__ID' href='#' class='card-link' onclick='deleteMention("' + "ID" + '")') Löschen
+                        a(id='openMentionLink__ID' href='#' class='card-link' onclick='openMention("' + "ID" + '")') Öffnen
+
+    template(id='detailTemplate')
+        div(class='mx-auto' style='width: 80%')
+
+            div(class='mx-auto mt-4 ml-4')
+                form(class='needs-validation was-validated' novalidate id='updateMentionForm' method='put' action='/mention')
+                    label(hidden='True' id='updateID')= "ID"
+
+                    div(class='form-group ml-4')
+                        h6(id='updateShowOwner') Besitzer : noch nicht gesetzt
+
+                    div(class='form-group ml-4')
+                        label(for='updateCaption') Thema
+                        input(class='form-control' id='updateCaption' type="text" name="updateCaption" maxlength=250 placeholder='CAPTION' required='true' autofocus='true' value='CAPTION')
+                        div(class='valid-feedback') OK
+                        div(class='invalid-feedback') Geben Sie ein Thema an
+
+                    div(class='form-group ml-4')
+                        label(for='updateText') Erinnerung
+                        textarea(class='form-control' id='updateText' name='updateText' rows=10 maxlength=1000) TEXT
+                        div(class='valid-feedback') OK
+                        div(class='invalid-feedback') Der Text ist zu lang
+
+                    button(id='deleteDetailMention' type='button' class='btn btn-warning ml-4 mt-4' onclick='deleteMention("' + "ID" + '")') Die Erinnerung löschen !
+                    button(id='Übernehmen' type='submit' class='btn btn-primary ml-4 mt-4') Übernehmen
+                    button(type='reset' class='btn btn-secondary ml-4 mt-4') Felder löschen...
+                    button(type='button' class='btn btn-secondary ml-4 mt-4' onclick='openHome()') Schließen
+
+
+    header
+        nav(id='mainMenu' class='navbar navbar-expand-md bg-dark navbar-dark fixed-top')
+            <!-- Brand -->
+            a(class='navbar-brand' href='#') MentionIT
+
+            <!-- Toggler/collapsibe Button -->
+            button(class='navbar-toggler' type='button' data-toggle='collapse' data-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation')
+                span(class='navbar-toggler-icon')
+
+
+            <!-- Navbar links -->
+            div(class='collapse navbar-collapse' id='navbarNav')
+                ul(class='navbar-nav')
+                    <!-- id and pagename have to be equal -->
+                    li(class='nav-item active openHome')
+                        a(class='nav-link' id='openHome' href='#' onclick='openHome()') Home
+                    li(class='nav-item openAddMention')
+                        a(class='nav-link' id='openAddMention' href='#' onclick='openAddMention()') Neu
+                    li(class='nav-item openAbout')
+                        a(class='nav-link' id='openAbout' href='#' onclick='openAbout()') Über MentionIT
+                    li(class='nav-item openImprint')
+                        a(class='nav-link' id='openImprint' href='#' onclick='openImprint()') Impressum
+                    li(class='nav-itemopen Login')
+                        a(class='nav-link' id='openLogin' href='#' onclick='openLogin()') Login
+                    li(class='nav-item logout')
+                        a(class='nav-link' id='logout' href='#' onclick='logout()') Logout
+                    li(class='nav-item openRegister')
+                        a(class='nav-link' id='openRegister' href='#' onclick='openRegister()') Registrieren
+
+    br
+    div(id='content' class='d-flex p-5')
+
+    footer
+        nav(class='navbar-light bg-light fixed-bottom')
+            hr
+            p Copyright &copy;2018
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    script(src='/jquery-3.3.1.slim.min.js')
+    script(src='/popper.min.js')
+    script(src='/bootstrap.min.js')
+    script(src='/dexie.js')
+    script(src='/clientsidescript.js')
+
+
+
+

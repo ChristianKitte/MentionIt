@@ -1,0 +1,24 @@
+div(class='mx-auto' style='width: 80%')
+
+    div(class='card-columns')
+        each val in mentions
+            div(class='card bg-light mb-4')
+                article(id=val.id class='mentionArticle')
+                    div(class='card-header')
+                        h5(id='caption__' + val.id class='card-title') #{ val.caption}
+
+                    div(class='card-body')
+                        h6(class='card-subtitle' mb-2 text-muted) Besitzer : #{val.owner}
+                        p(id='body__' + val.id class='card-text') #{val.text}
+
+                        ul
+                            li(id='imageCount__' + val.id)= 'Bilder : ' + val.image.length
+                            li(id='voiceCount__' + val.id)= 'Sprachnachrichten : ' + val.voice.length
+
+                        nav(class='listMenu')
+                            a(id='deleteMentionLink__' + val.id href='#' class='card-link' onclick='deleteMention("' + val.id + '")') Löschen
+                            a(id='openMentionLink__' + val.id href='#' class='card-link' onclick='openMention("' + val.id + '")') Öffnen
+
+
+
+

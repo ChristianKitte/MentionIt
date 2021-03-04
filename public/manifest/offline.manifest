@@ -1,0 +1,23 @@
+CACHE MANIFEST
+# base manifest
+# 2018-05-29:v0.1.01
+
+# main resources.
+CACHE:
+
+#all
+bootstrap.min.css
+jquery-3.3.1.slim.min.js
+popper.min.js
+bootstrap.min.js
+favicon.png
+offlineworker.js
+clientsidescript.js
+dexie.js
+
+# online resources
+NETWORK:
+*
+
+# fallback resource
+FALLBACK:
