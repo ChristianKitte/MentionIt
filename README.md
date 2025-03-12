@@ -9,6 +9,5 @@ daher priorisiert.
 Als weitere Forderung stand die Umsetzung einer **Benutzerverwaltung** und **Zugangskontrolle** für eine erfolgreiche Umsetzung. Aus Gründen der Sicherheit wurde
 der im [Code](https://github.com/ChristianKitte/MentionIt/blob/master/app.js) verwendete Schlüssel entfernt.
 
-Eine ausführliche Beschreibung findet sich [hier](https://github.com/ChristianKitte/MentionIt/blob/master/Projektbericht.pdf). Die Anwendung kann auch direkt
-[hier](http://christian-kitte.de:20000/) aufgerufen werden. Hierbei handelt es sich aktuell um eine nicht gesicherte Verbindung, so 
-dass eine Warnung des Browsers wahrscheinlich ist.
+Eine ausführliche Beschreibung findet sich [hier](https://github.com/ChristianKitte/MentionIt/blob/master/Projektbericht.pdf). Leider kann die Anwendung aktuell aus technischen
+Gründen nicht aufgerufen werden.
